@@ -3,58 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Encriptador de Texto</title>
 </head>
 <body>
     <header class="titulo">
+        <div class="logo">
+            <img src="./img/alura.svg" alt="Logo de Alura">
+        </div>
         <h1 class="tituloH1">
             Encriptador de Texto
         </h1>
     </header>
 
-    <div class="content">
+    <main class="container">
         <div class="encriptadoArea">
-            <label for="desencriptadoTxt" class="tituloSeccion">Encriptado</label>
-            <textarea id="desencriptadoTxt" name="desencriptadoTxt" rows="10" cols="50"></textarea>
+            <label for="desencriptadoTxt" class="tituloSeccion">Texto a Encriptar</label>
+            <textarea id="desencriptadoTxt" name="desencriptadoTxt" rows="12" cols="60"></textarea>
             
-            <button class="boton" id="encriptadoBtn">Enciptar</button>
-            <button class="boton" id="desencriptadoBtn">Desencriptar</button>
+            <div class="botones">
+                <div class="aviso">
+                    <p><i class="bi bi-info-circle-fill"></i>  Letras Minusculas y sin acentos.</p>
+                </div>
+                <button class="boton" id="encriptadoBtn">Enciptar</button>
+                <button class="boton" id="desencriptadoBtn">Desencriptar</button>
+            </div>
         </div>
-
+    
         <div class="mensajeAarea">
-            <div class="ocultar" id="correcto">
-                <img src="./img/correcto.jpg" alt="Carita Feliz">
+            <div class="ocultar correctoEncriptado" id="correctoEncriptado">
+                <img src="./img/correctoEncriptado.png" alt="Carita Feliz">
                 <p class="mensaje">
                     ENCRIPTADO GENERADO CORRECTAMENTE
                 </p>
             </div>
 
+            <div class="ocultar" id="correctoDesencriptado">
+                <img src="./img/correctoDesencriptar.png" alt="Carita Feliz">
+                <p class="mensaje">
+                    DESENCRIPTADO GENERADO CORRECTAMENTE
+                </p>
+            </div>
+    
             <div class="ocultar" id="error">
-                <img src="./img/error.jpg" alt="Carita Triste">
+                <img src="./img/error.png" alt="Carita Triste">
                 <p class="mensaje">
                     VERIFIQUE LO INGRESADO (NO SE PERMITEN LETRAS ACENTUADAS, MAYUSCULAS O CARACTERES ESPECIALES)
                 </p>
             </div>
-
+    
             <div class="ocultar" id="vacio">
-                <img src="./img/vacio.jpg" alt="Carita Regular">
-                <p class="mensaje">
-                    DEBE INGRESAR UN MENSAJE PARA ENCRIPTAR
-                </p>
+                <img src="./img/vacio.png" alt="Carita Regular">
+                    <p class="mensaje">
+                        DEBE INGRESAR UN MENSAJE PARA ENCRIPTAR
+                    </p>
+                </div>
+            </div>
+    
+            <div class="desencriptadoArea">
+                <label for="encriptadoTxt" class="tituloSeccion">Texto Descencriptado</label>
+                <textarea id="encriptadoTxt" name="encriptadoTxt" rows="15" cols="60" readonly></textarea>
+                
+                <button class="boton copiarBtn" id="copiarBtn">Copiar</button>
             </div>
         </div>
-
-        <div class="desencriptadoArea">
-            <label for="encriptadoTxt" class="tituloSeccion">Desencriptado</label>
-            <textarea id="encriptadoTxt" name="encriptadoTxt" rows="15" cols="50" readonly></textarea>
-            <button class="boton" id="copiarBtn">Copiar</button>
-        </div>
-    </div>
+    </main>
 
     <footer>
-        Nombre: Fernando G. Espindola O. <br>
-        Nacionalidad: Argentino
+        <p>Autor: Fernando G. Espindola O.</p>
+        <p>&copy; 2024 Todos los derechos reservados.</p>
+        <p>
+            <a href="https://github.com/tu-usuario" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/tu-usuario" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
