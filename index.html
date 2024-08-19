@@ -14,18 +14,21 @@
 <body>
     <header class="titulo">
         <div class="logo">
-            <img src="./img/alura.svg" alt="Logo de Alura">
+            <img src="./img/alura.svg" alt="Logo de Alura" class="logo">
         </div>
-        <h1 class="tituloH1">
-            Encriptador de Texto
-        </h1>
+        <div class="tituloLogo">
+            <h1>Encriptador de Texto</h1>
+        </div>
     </header>
 
     <main class="container">
-        <div class="encriptadoArea">
-            <label for="desencriptadoTxt" class="tituloSeccion">Texto a Encriptar</label>
-            <textarea id="desencriptadoTxt" name="desencriptadoTxt" rows="12" cols="60"></textarea>
-            
+        <div class="desencriptadoArea">
+            <div class="desemcriptado">
+                <label for="desencriptadoTxt" class="tituloSeccion">Texto a Encriptar</label>
+            </div>
+            <div class="divDesencriptado">
+                <textarea id="desencriptadoTxt" name="desencriptadoTxt" placeholder="Ingrese el texto aqui"></textarea>
+            </div>
             <div class="botones">
                 <div class="aviso">
                     <p><i class="bi bi-info-circle-fill"></i>  Letras Minusculas y sin acentos.</p>
@@ -37,50 +40,69 @@
     
         <div class="mensajeAarea">
             <div class="ocultar correctoEncriptado" id="correctoEncriptado">
-                <img src="./img/correctoEncriptado.png" alt="Carita Feliz">
+                <img src="./img/correctoEncriptado.png" alt="Carita Feliz" class="imgCarita">
                 <p class="mensaje">
                     ENCRIPTADO GENERADO CORRECTAMENTE
                 </p>
             </div>
 
             <div class="ocultar" id="correctoDesencriptado">
-                <img src="./img/correctoDesencriptar.png" alt="Carita Feliz">
+                <img src="./img/correctoDesencriptar.png" alt="Carita Feliz" class="imgCarita">
                 <p class="mensaje">
                     DESENCRIPTADO GENERADO CORRECTAMENTE
                 </p>
             </div>
     
-            <div class="ocultar" id="error">
-                <img src="./img/error.png" alt="Carita Triste">
+            <div class="ocultar caritaError" id="error">
+                <img src="./img/error.png" alt="Carita de Panico" class="imgCarita">
                 <p class="mensaje">
                     VERIFIQUE LO INGRESADO (NO SE PERMITEN LETRAS ACENTUADAS, MAYUSCULAS O CARACTERES ESPECIALES)
                 </p>
             </div>
-    
-            <div class="ocultar" id="vacio">
-                <img src="./img/vacio.png" alt="Carita Regular">
-                    <p class="mensaje">
-                        DEBE INGRESAR UN MENSAJE PARA ENCRIPTAR
-                    </p>
-                </div>
+
+            <div class="ocultar caritaVacio" id="vacio" class="caritaVacio">
+                <img src="./img/vacio.png" alt="Carita Triste" class="imgCarita">
+                <p class="mensaje">
+                    DEBE INGRESAR UN MENSAJE PARA ENCRIPTAR
+                </p>
             </div>
-    
-            <div class="desencriptadoArea">
-                <label for="encriptadoTxt" class="tituloSeccion">Texto Descencriptado</label>
-                <textarea id="encriptadoTxt" name="encriptadoTxt" rows="15" cols="60" readonly></textarea>
-                
-                <button class="boton copiarBtn" id="copiarBtn">Copiar</button>
+
+            <div class="ocultar caritaCopiado" id="copiado" class="caritaCopiado">
+                <img src="./img/copiadOK.png" alt="Carita ContentaOK" class="imgCarita">
+                <p class="mensaje">
+                    COPIADO CORRECTAMENTE
+                </p>
+            </div>
+        </div>
+        
+        <div class="encriptadoArea">
+            <div class="encriptadoTxt">
+                <label for="encriptadoTxt" class="tituloSeccion">Texto Encriptado</label>
+            </div>
+
+            <div class="encriptadoTxt">
+                <textarea id="encriptadoTxt" name="encriptadoTxt" placeholder="Ingrese el texto aqui"></textarea>
+            </div>
+            
+            <div id="copiarBtn">
+                <button class="boton copiarBtn">Copiar</button>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>Autor: Fernando G. Espindola O.</p>
-        <p>&copy; 2024 Todos los derechos reservados.</p>
-        <p>
-            <a href="https://github.com/tu-usuario" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/tu-usuario" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </p>
+        <div class="autor">
+            <p>Autor: Fernando G. Espindola O.</p><br>
+        </div>
+        <div class="derechos">
+            <p>&copy; 2024 Todos los derechos reservados.</p><br>
+        </div>
+        <div class="redes">
+            <p>
+                <a href="https://github.com/tu-usuario" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/tu-usuario" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </p>
+        </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>

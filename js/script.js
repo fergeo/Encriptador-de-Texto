@@ -8,6 +8,7 @@ correctoEncriptado = document.getElementById('correctoEncriptado');
 correctoDesencriptado = document.getElementById('correctoDesencriptado');
 vacio = document.getElementById('vacio');
 error = document.getElementById('error');
+copiado = document.getElementById('copiado');
 
 
 desencriptadoTxt.value = '';
@@ -31,6 +32,7 @@ function mostrarCaritaFeliz(){
     correctoDesencriptado.classList.add('ocultar');
     vacio.classList.add('ocultar');
     error.classList.add('ocultar');
+    copiado.classList.add('ocultar');
 }
 
 function mostrarCaritaFelizDesEncriptado(){
@@ -38,6 +40,7 @@ function mostrarCaritaFelizDesEncriptado(){
     correctoDesencriptado.classList.remove('ocultar');
     vacio.classList.add('ocultar');
     error.classList.add('ocultar');
+    copiado.classList.add('ocultar');
 }
 
 function mostrarCaritaRegular(){
@@ -45,7 +48,7 @@ function mostrarCaritaRegular(){
     correctoDesencriptado.classList.add('ocultar');
     vacio.classList.remove('ocultar');
     error.classList.add('ocultar');
-    //desencriptadoTxt.value = '';
+    copiado.classList.add('ocultar');
     encriptadoTxt.value = '';
 }
 
@@ -54,8 +57,16 @@ function mostrarCaritaTriste(){
     correctoDesencriptado.classList.add('ocultar');
     vacio.classList.add('ocultar');
     error.classList.remove('ocultar');
-    //desencriptadoTxt.value = '';
+    copiado.classList.add('ocultar');
     encriptadoTxt.value = '';
+}
+
+function mostrarCaritaOk(){
+    correctoEncriptado.classList.add('ocultar');
+    correctoDesencriptado.classList.add('ocultar');
+    vacio.classList.add('ocultar');
+    error.classList.add('ocultar');
+    copiado.classList.remove('ocultar');
 }
 
 
@@ -128,12 +139,31 @@ function desencriptar()
 
 }
 
+function copiarTexto()
+{
+    if(encriptadoTxt.value === "")
+    {
+        mostrarCaritaRegular();     
+    }
+    else
+    {
+        const contenido = encriptadoTxt.value;
+        //encriptadoTxt.select();
+        //navigator.clipboard.writeText(contenido);
+        desencriptadoTxt.value = '';
+        mostrarCaritaOk();
+        //alert('Texto copiado satisfactoriamente al portapapeles');
+    }    
+}
 
-copiarBtn.addEventListener("click", function() {
+
+copiarBtn.addEventListener('click', function() {
     desencriptadoTxt.value = encriptadoTxt.value;  
 });
 
-encriptadoBtn.addEventListener("click", encriptar);
+encriptadoBtn.addEventListener('click', encriptar);
 
-desencriptadoBtn.addEventListener("click", desencriptar);
+desencriptadoBtn.addEventListener('click', desencriptar);
+
+copiarBtn.addEventListener('click', copiarTexto);
 

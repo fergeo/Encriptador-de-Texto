@@ -3,21 +3,30 @@
     margin: 0px;
 }
 
-header{
-    height: 15vh;
+.titulo{
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
 }
 
-header h1{
+.tituloLogo{
+    width: 80%;
+    height: 100%;
+}
+
+.logo{
+    width: 10vw;
+    height: 10vh;
+}
+
+h1{
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
     font-weight: bold;
     font-style: normal;
 }
 
-.logo{
-    width: 10vw;
-    height: 8vh;
-}
+
 
 body{
     background: rgb(63,94,251);
@@ -30,24 +39,26 @@ main{
 
 .titulo{
     text-align: center;
-    padding-top: 3vh;
     font-size: 30px;
 }
 
 .container{
     width: 100%;
-    
-    padding-top: 100px;
-
+    height: 100%;
     display: flex;
-    
 }
 
-.encriptadoArea{
+.desencriptadoArea{
     width: 33%;
+    height: 100%;
     text-align: center;
 
-    display: felx;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabletMobil{
+    display: none;
 }
 
 .tituloSeccion{
@@ -61,10 +72,18 @@ main{
 
 textarea{
     margin-top: 3vh;
+
+    width: 500px;
+    height: 400px;
+    resize: none;
+
+    font-size: 30px;
+    color:blue;
 }
 
 .botones{
-    margin-top: 20vh;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
 }
 
 
@@ -77,10 +96,25 @@ textarea{
     display: none;
 }
 
-.correctoEncriptado{
-    width: 400px;
-    height: 400px;
+img{
+    width: 300px;
+    height: 300px;
 }
+
+.caritaVacio{
+    width: 100%;
+    height: 400px;
+    text-align: center;
+}
+
+.caritaCopiado{
+    width: 100%;
+    height: 350px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+
 
 .correctoDesencriptado, error, vacio{
     width: 500px;
@@ -96,8 +130,9 @@ textarea{
     font-style: normal;
 }
 
-.desencriptadoArea{
+.encriptadoArea{
     width: 33%;
+    height: 100%;
     text-align: center;
 }
 
@@ -108,11 +143,103 @@ textarea{
 }
 
 .copiarBtn{
-    margin-top: 2vh;
+    margin-top: 4vh;
+}
+
+button{
+    background-color: hwb(265 42% 4%); 
+    font-size: 20px;
+    font-weight: bolder;
+    color:white;
 }
 
 footer{
-    height: 15vh;
+    height: 20vh;
+    padding-top: 50px;
+    padding-left: 50px;
     border-color: red;
     border-width: 10px;
+    background-color: hsl(265, 72%, 44%); 
+
+    font-size: 20px;
+    font-weight: 200;
+    color:white;
 }
+
+.copiarBtn{
+    margin-bottom: 30px;
+}
+
+
+/* Media query for tablets (medium screens) */
+@media only screen and (max-width: 1024px) {
+    .container{
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .desencriptadoArea, .encriptadoArea{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    
+        display: flex;
+        flex-direction: column;
+    }
+
+    textarea {
+        width: 700px; 
+        height: 300px;
+    }
+
+    .imgCarita{
+        display: none;
+    }
+
+    .botones{
+        margin-top: 0px;
+        padding-top: 30px;
+    }
+
+    .encriptadoArea{
+        margin-top: 40px;
+    }
+
+    .mensajeAarea{
+        width: 100%;
+    }
+}
+
+/* Media query for mobile devices (small screens) */
+@media only screen and (max-width: 900px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .titulo{
+        height: 100px;
+    }
+
+    h1{
+        font-size: 35px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    textarea {
+        width: 400px; 
+        height: 200px; /* Set the desired height */
+        resize: none; /* Optional: Prevent the user from resizing the textarea */
+    }
+
+    .header {
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
